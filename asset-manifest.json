@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/news-automobile/static/css/main.5ce1a4c7.css",
+    "main.js": "/news-automobile/static/js/main.d9402315.js",
+    "static/js/787.0b5f433f.chunk.js": "/news-automobile/static/js/787.0b5f433f.chunk.js",
+    "static/media/spinner.gif": "/news-automobile/static/media/spinner.ac53bdbc26fb813b9344.gif",
+    "index.html": "/news-automobile/index.html",
+    "main.5ce1a4c7.css.map": "/news-automobile/static/css/main.5ce1a4c7.css.map",
+    "main.d9402315.js.map": "/news-automobile/static/js/main.d9402315.js.map",
+    "787.0b5f433f.chunk.js.map": "/news-automobile/static/js/787.0b5f433f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5ce1a4c7.css",
+    "static/js/main.d9402315.js"
+  ]
+}
