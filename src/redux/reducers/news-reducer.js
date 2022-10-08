@@ -22,7 +22,6 @@ export const newsReducer = (state = initialState, action) => {
         news: action.payload,
       };
     case SET_LIKE:
-      console.log(state.likedNews);
       return {
         ...state,
         likedNews: isLiked(state.likedNews, action.payload),
