@@ -7,3 +7,6 @@ export const likedNewsSelector = (state) => {
 export const isFilterSelector = (state) => {
   return state.news.isFilter;
 };
+export const isLoadingSelector = (state) => {
+  return state.news.isLoading;
+};

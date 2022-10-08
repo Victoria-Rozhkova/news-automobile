@@ -1,10 +1,17 @@
 import { isLiked } from "../../utils/isLiked";
-import { SET_LIKE, SET_NEWS, TOGGLE_FILTER } from "../actions/news-actions";
+import {
+  DELETE_ITEM,
+  SET_LIKE,
+  SET_NEWS,
+  TOGGLE_FILTER,
+  TOGGLE_IS_LOADING,
+} from "../actions/news-actions";
 
 const initialState = {
   news: [],
   likedNews: [],
   isFilter: false,
+  isLoading: false,
 };
 
 export const newsReducer = (state = initialState, action) => {
@@ -24,6 +31,17 @@ export const newsReducer = (state = initialState, action) => {
       return {
         ...state,
         isFilter: action.payload,
+      };
+    case DELETE_ITEM:
+      return {
+        ...state,
+        news: state.news.filter((el) => el.id !== action.payload),
+        likedNews: state.likedNews.filter((el) => el.id !== action.payload),
+      };
+    case TOGGLE_IS_LOADING:
+      return {
+        ...state,
+        isLoading: action.payload,
       };
     default:
       return state;

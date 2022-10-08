@@ -1,27 +1,30 @@
-import { Card, CardActions, CardContent, CardHeader, CardMedia, IconButton, Typography } from "@mui/material";
 import React, { useState } from "react";
+import { Card, CardActions, CardContent, CardHeader, CardMedia, IconButton, Typography } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import style from "./Card.module.css";
 
+export const CardComp = ({ news, likeItem, deleteNews }) => {
 
-export const CardComp = ({ news, onLike }) => {
-
-  const onClick = (news) => {
+  const onLike = (news) => {
     setLike(!like);
-    onLike(news);
+    likeItem(news);
+  };
+
+  const onDelete = (id) => {
+    deleteNews(id);
   };
 
   const [like, setLike] = useState(false);
+
   return (
     <Card sx={{ maxWidth: 345 }} className={style.card}>
       <CardHeader
         action={
-          <IconButton aria-label="settings">
+          <IconButton aria-label="settings" onClick={() => onDelete(news.id)}>
             <DeleteIcon />
           </IconButton>
         }
-
         title={news.title}
         subheader={news.date}
       />
@@ -40,7 +43,7 @@ export const CardComp = ({ news, onLike }) => {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites" onClick={() => onClick(news)}>
+        <IconButton aria-label="add to favorites" onClick={() => onLike(news)}>
           <FavoriteIcon className={`${like ? style.active : style.like}`} />
         </IconButton>
       </CardActions>
